@@ -35,3 +35,22 @@ from langchian import LLMChain
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.prompts import HumanMessagePromptTemplate
 from langchian_core.prompts import MessagesPlaceholder
+from langchain.memory import ConversationBufferMemory
+from langchain.memory import FileChatMessageHistory
+
+
+memory = ConversationBufferMomery(
+    chat_memory = FileChatMessageHistory("messages.json"),
+    memory_key = "messages",
+    return_messages = True
+)
+
+
+prompt = ChatPromptTemplate(
+    input_variables = ["content", "messages"],
+    messages = [
+        MessagesPlaceholder(variable_name="messages"),
+        HumanMessagePromptTemplate.from_template("{content}")
+    ]
+)
+
