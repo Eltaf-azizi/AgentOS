@@ -77,3 +77,19 @@ response = chain.invoke("my name is Julio")
 print("\n-----------\n")
 
 print("my name is Julio")
+
+print("\n-----------\n")
+print(response)
+
+print("\n-----------\n")
+
+response = chain.invoke("what is my name?")
+
+print("\n-----------\n")
+
+print("what is my name?")
+
+print("\n-----------\n")
+print(response)
+
+print("\n-----------\n")
