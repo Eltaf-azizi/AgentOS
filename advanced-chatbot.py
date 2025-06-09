@@ -11,3 +11,23 @@ from langchain_core.messages import HumanMessage
 messagesToTheChatbot = [
     HumanMessage(content="My favorite color is blue.")
 ]
+
+chatbot.invoke(messagesToTheChatbot)
+
+chatbot.invoke([
+    HumanMessage(content="What is my favorite color?")
+])
+
+
+from langchain_community.chat_message_histories import ChatMessageHistory
+from langchain_core.chat_history import BaseChatMessageHistory
+from langchain_core.runnables.history import RunnableWithMessageHistory
+
+
+
+chatbotMemory = {}
+
+# input: session_id, output: chatbotMenory[session_id]
+def get_session_history(session_id: str) -> BaseChatMessageHistory:
+    if session_id not in chatbotMemory:
+        chatbotMemory[session_id] = ChatMessageHistory()
