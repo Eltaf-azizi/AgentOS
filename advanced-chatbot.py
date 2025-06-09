@@ -31,3 +31,20 @@ chatbotMemory = {}
 def get_session_history(session_id: str) -> BaseChatMessageHistory:
     if session_id not in chatbotMemory:
         chatbotMemory[session_id] = ChatMessageHistory()
+    return chatbotMemory[session_id]
+
+
+chatbot_with_message_history = RunnableWithMessageHistory(
+    chatbot,
+    get_session_history
+)
+
+session1 = {"configurable": {"session_id": "001"}}
+
+
+responseFromChatbot = chatbot_with_message_history.invoke(
+    [HumanMessage(content="My favorite color is red.")],
+    config=session1,
+)
+
+responseFromChatbot.content
