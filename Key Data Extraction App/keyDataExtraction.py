@@ -79,3 +79,22 @@ class Data(BaseModel):
 chain = prompt | llm.with_structured_output(schema=Data)
 
 comment = "I'm so impressed with this product! It has truly transformed how I approach my daily tasks."
+
+chain.invoke({"text": comment})
+
+
+
+# Example input text that mentions multiple people
+text_input ="""
+            Alice Johnson from Canada recently reviewed a book she loved. Meanwhile, Bob Smith from the USA shared his insights on the same book in a different review. Both reviews were very insightful.
+            """
+
+
+
+# Invoke the processing chain on the text
+response = chain.invoke({"text": text_input})
+
+
+
+# Output the extracted data
+response
