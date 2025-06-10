@@ -48,3 +48,24 @@ responseFromChatbot = chatbot_with_message_history.invoke(
 )
 
 responseFromChatbot.content
+
+
+
+responseFromChatbot = chatbot_with_message_history.invoke(
+    [HumanMessage(content="What's my favorite color?")],
+    config=session1,
+)
+
+responseFromChatbot.content
+
+
+
+session2 = {"configuration": {"session_id": "002"}}
+
+
+responseFromChatbot = chatbot_with_message_history.invoke(
+    [HumanMessage(content="What's my favorite color?")],
+    config=session2,
+)
+
+responseFromChatbot.content
