@@ -8,7 +8,7 @@ from langchain_openai import ChatOpenAI
 
 llm = ChatOpenAI(model="gpt-3.5-turbo-0125")
 
-from typing import Optional
+from typing import List, Optional
 
 from langchain_core.pydantic_v1 import BaseModel, Field
 
@@ -61,3 +61,21 @@ prompt = ChatPromptTemplate.from_messages(
 
 
 chain = prompt | llm.with_structured_output(schema=Person)
+
+comment = "I absolutely love this product! It's been a game-changer fro my daily routine."
+
+chain.invoke({"text": comment})
+
+
+
+class Data(BaseModel):
+    """Extracted data about people."""
+
+
+    # Creates a model so that we can extract multiple entities.
+    people: List[Person]
+
+
+chain = prompt | llm.with_structured_output(schema=Data)
+
+comment = "I'm so impressed with this product! It has truly transformed how I approach my daily tasks."
