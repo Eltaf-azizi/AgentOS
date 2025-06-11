@@ -14,3 +14,22 @@ file_path = "./data/Be_Good.pdf"
 loader = PyPDFLoader(file_path)
 
 docs = loader.load()
+
+
+
+from langchain_chorma import Chroma
+from langchain_openai import OpenAIEmbeddings
+from langchain_text_splitters import RecursiveCharacterTextSpliter
+
+
+text_splitter = RecursiveCharacterTextSpliter(chunk_size=1000, chunk_overlap=200)
+
+splits = text_splitter.split_documents(docs)
+
+vectorstore = Chroma.from_documents(documents=splits, embedding=OpenAIEmbeddings())
+
+retriever = vectorstore.as_retriever()
+
+
+from langchain.chains import create_retrieval_chain
+from langchain.chains.combine_documents import create_stuff_documents_chain
