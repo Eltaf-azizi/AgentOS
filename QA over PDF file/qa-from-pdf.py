@@ -53,3 +53,24 @@ prompt = ChatPromptTemplate.from_messages(
         ("human", "{input}"),
     ]
 )
+
+question_answer_chain = create_stuff_documents_chain(llm, prompt)
+
+rag_chain = create_retrieval_chain(retriever, question_answer_chain)
+
+response = rag_chain.invoke({"input": "What is this article about?"})
+
+
+print("\n------------\n")
+
+print("What is this article about?")
+
+print("\n----------\n")
+print("\n----------\n")
+
+print("Show metadata: ")
+
+print("\n----------\n")
+print(response["context"][0].metadata)
+
+print("\n----------\n")
