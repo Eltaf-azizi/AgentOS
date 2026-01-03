@@ -63,3 +63,13 @@ Some folders contain unfinished work or experiments where I tested ideas like:
  - Trying different approaches to processing PDFs
 
 These are part of learning and experimentation.
+
+
+### 🛠️ Technologies Used
+
+ - Python
+ - PDF processing libraries
+ - Basic NLP concepts
+ - Simple AI logic
+
+(No advanced frameworks or production-level tools are used.)
