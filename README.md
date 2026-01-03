@@ -39,3 +39,27 @@ Focus areas:
  - Understanding how AI models can respond based on document content
 
 Purpose: Learn the basics of QA systems.
+
+
+### 🔹 Chatbot
+
+A simple chatbot project built for learning purposes.
+
+Focus areas:
+
+ - Understanding chatbot flow
+ - Handling user input
+ - Generating responses based on predefined logic or document data
+
+Purpose: Learn chatbot fundamentals.
+
+
+### 🔹 Experiments & Notes
+
+Some folders contain unfinished work or experiments where I tested ideas like:
+
+ - Key data extraction techniques
+ - Improving responses
+ - Trying different approaches to processing PDFs
+
+These are part of learning and experimentation.
