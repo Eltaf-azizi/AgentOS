@@ -73,3 +73,11 @@ These are part of learning and experimentation.
  - Simple AI logic
 
 (No advanced frameworks or production-level tools are used.)
+
+
+### 📖 Future Improvements
+
+ - Better document parsing
+ - More accurate question answering
+ - Improved chatbot responses
+ - Cleaner project structure
