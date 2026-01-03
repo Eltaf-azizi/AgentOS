@@ -14,3 +14,15 @@ This repository explores:
  - Building basic Question Answering (QA) systems over PDFs
  - Understanding how chatbots work with document-based data
  - Practicing Python, NLP, and AI concepts at a beginner level
+
+📂 Project Structure
+🔹 Key Data Extraction App
+
+A beginner project focused on extracting important information from PDF files.
+This includes:
+
+ - Reading PDF files
+ - Extracting text
+ - Identifying key fields or data points
+
+Purpose: Learn how document data extraction works.
